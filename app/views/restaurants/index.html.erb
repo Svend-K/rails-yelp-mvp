@@ -1,10 +1,19 @@
-<% @restaurants.each do |restaurant| %>
-  <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
-  <p><%=restaurant.address %></p>
-  <p><%=restaurant.category %></p>
-  <p><%=restaurant.phone_number %></p>
-  <p><%= link_to "Delete", restaurant_path(restaurant),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %><p>
-<% end %>
-<p><%= link_to "new restaurant", new_restaurant_path %></p>
+<div class="wrapper">
+  <img src="../images/planet.jpg" class="wrapper" alt="planet">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <% @restaurants.each do |restaurant| %>
+          <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
+          <p><%=restaurant.address %></p>
+          <p><%=restaurant.category %></p>
+          <p><%=restaurant.phone_number %></p>
+          <p><%= link_to "Delete", restaurant_path(restaurant),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %><p>
+        <% end %>
+          <p><%= link_to "new restaurant", new_restaurant_path %></p>
+       </div>
+    </div>
+  </div>
+</div>
